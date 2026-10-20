@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <!-- Primary Meta Tags -->
+    <meta
+      name="title"
+      content="HostelMS - Modern Hostel Management System"
+    />
+    <meta
+      name="description"
+      content="Comprehensive hostel management solution for managing students, rooms, payments, and complaints. Streamline your hostel operations with our modern platform."
+    />
+    <meta
+      name="keywords"
+      content="hostel management, student accommodation, room management, payment system, complaint management, hostel software, student housing"
+    />
+    <meta name="author" content="HostelMS Team" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hostelms.com/" />
+    <meta property="og:title" content="HostelMS - Modern Hostel Management System" />
+    <meta property="og:description" content="Comprehensive hostel management solution for managing students, rooms, payments, and complaints." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="HostelMS" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hostelms.com/" />
+    <meta property="twitter:title" content="HostelMS - Modern Hostel Management System" />
+    <meta property="twitter:description" content="Comprehensive hostel management solution for managing students, rooms, payments, and complaints." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+    <meta name="twitter:creator" content="@hostelms" />
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="HostelMS" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/logo152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="%PUBLIC_URL%/logo167.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link rel="preconnect" href="https://api.hostelms.com" /> -->
+    
+    <!-- Google Fonts -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+      rel="stylesheet"
+    />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <!-- <link rel="dns-prefetch" href="https://api.hostelms.com" />
+    <link rel="dns-prefetch" href="https://cdn.hostelms.com" /> -->
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hostelms.com" />
+    
+    <title>HostelMS - Modern Hostel Management System</title>
+    
+    <!-- Critical CSS for initial loading -->
+    <style>
+      /* Critical CSS to prevent FOUC */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      body {
+        margin: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        transition: background 0.3s ease;
+      }
+      
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+      }
+      
+      /* Loading Animation */
+      #root:empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        position: relative;
+      }
+      
+      #root:empty::before {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        border-top-color: #ffffff;
+        animation: spin 1s ease-in-out infinite;
+      }
+      
+      #root:empty::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        border-bottom-color: rgba(255, 255, 255, 0.8);
+        animation: spin-reverse 1.5s ease-in-out infinite;
+      }
+      
+      /* Loading Text */
+      .loading-text {
+        position: absolute;
+        bottom: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        opacity: 0.8;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      @keyframes spin-reverse {
+        to { transform: rotate(-360deg); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      
+      /* Selection Styles */
+      ::selection {
+        background-color: #667eea;
+        color: white;
+      }
+      
+      ::-moz-selection {
+        background-color: #667eea;
+        color: white;
+      }
+      
+      /* Focus Styles */
+      :focus-visible {
+        outline: 2px solid #667eea;
+        outline-offset: 2px;
+      }
+      
+      /* Print Styles */
+      @media print {
+        body {
+          background: white !important;
+        }
+        
+        .no-print {
+          display: none !important;
+        }
+      }
+      
+      /* Dark Mode Support */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+      }
+      
+      /* Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+        
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      
+      /* High Contrast Mode */
+      @media (prefers-contrast: high) {
+        body {
+          background: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NoScript Fallback -->
+    <noscript>
+      <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 20px;
+      ">
+        <div style="max-width: 500px;">
+          <div style="font-size: 64px; margin-bottom: 20px;">⚠️</div>
+          <h1 style="font-size: 28px; margin-bottom: 16px; font-weight: 700;">
+            JavaScript is Required
+          </h1>
+          <p style="font-size: 16px; line-height: 1.6; opacity: 0.95; margin-bottom: 24px;">
+            HostelMS requires JavaScript to function properly. 
+            Please enable JavaScript in your browser settings to access the application.
+          </p>
+          <div style="
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+          ">
+            <p style="margin-bottom: 8px;">
+              Need help enabling JavaScript?
+            </p>
+            <a 
+              href="https://www.enable-javascript.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style="color: white; text-decoration: underline;"
+            >
+              Click here for instructions
+            </a>
+          </div>
+        </div>
+      </div>
+    </noscript>
+    
+    <!-- Root Element -->
+    <div id="root"></div>
+    
+    <!-- Loading Text (only visible while React loads) -->
+    <div class="loading-text" id="loading-message">
+      Loading Hostel Management System...
+    </div>
+    
+    <!-- Environment Configuration -->
+    <script>
+      // Inject environment variables
+      window.__ENV__ = {
+        API_URL: '%REACT_APP_API_URL%' || 'http://localhost:5000/api',
+        NODE_ENV: '%NODE_ENV%' || 'development',
+        APP_VERSION: '%REACT_APP_VERSION%' || '1.0.0',
+        SENTRY_DSN: '%REACT_APP_SENTRY_DSN%' || '',
+      };
+      
+      // Remove loading message after React loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loadingMsg = document.getElementById('loading-message');
+          if (loadingMsg) {
+            loadingMsg.style.opacity = '0';
+            setTimeout(function() {
+              if (loadingMsg.parentNode) {
+                loadingMsg.parentNode.removeChild(loadingMsg);
+              }
+            }, 300);
+          }
+        }, 500);
+      });
+      
+      // Handle online/offline status
+      window.addEventListener('online', function() {
+        document.body.classList.remove('offline');
+      });
+      
+      window.addEventListener('offline', function() {
+        document.body.classList.add('offline');
+      });
+      
+      // Set initial online status
+      if (!navigator.onLine) {
+        document.body.classList.add('offline');
+      }
+    </script>
+    
+    <!-- Offline Indicator Styles -->
+    <style>
+      body.offline::before {
+        content: 'You are currently offline. Some features may be unavailable.';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #ef4444;
+        color: white;
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 99999;
+        animation: slideDown 0.3s ease-out;
+      }
+      
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      
+      body.offline {
+        padding-top: 40px;
+      }
+    </style>
+    
+    <!-- 
+      This HTML file is the entry point for the Hostel Management System.
+      It will be processed by React and bundled with all necessary assets.
+      
+      For development:
+        Run `npm start` to start the development server.
+        
+      For production:
+        Run `npm run build` to create an optimized production build.
+        
+      For more information, visit:
+        https://hostelms.com/docs
+    -->
+  </body>
+</html>
